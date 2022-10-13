@@ -50,7 +50,7 @@ if ( ! function_exists( 'cf_get_posts' ) ) {
 	}
 }
 
-if( ! function_exists( 'cf_list_posts_html' ) ) {
+if ( ! function_exists( 'cf_list_posts_html' ) ) {
 	/**
 	 * Display the posts.
 	 *

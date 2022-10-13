@@ -34,7 +34,6 @@ class Cf_Core_Functions_Public {
 		add_action( 'wp_ajax_fetch_posts', array( $this, 'fetch_posts_callback' ) );
 		add_action( 'wp_ajax_nopriv_fetch_posts', array( $this, 'fetch_posts_callback' ) );
 		add_action( 'cf_posts_args', array( $this, 'cf_posts_args_callback' ) );
-		
 	}
 
 	/**
@@ -50,7 +49,7 @@ class Cf_Core_Functions_Public {
 		);
 
 		// Font Awsome Style.
-		wp_enqueue_style(
+		wp_enqueue_style( // phpcs:ignore
 			'font-awsome-style',
 			'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css',
 		);
@@ -154,8 +153,8 @@ class Cf_Core_Functions_Public {
 		$paged       = filter_input( INPUT_POST, 'paged', FILTER_SANITIZE_NUMBER_INT );
 		$category_id = filter_input( INPUT_POST, 'category', FILTER_SANITIZE_NUMBER_INT );
 		$searchtext  = filter_input( INPUT_POST, 'searchtext', FILTER_SANITIZE_STRING );
-
 		$args        = array(
+			'post_type'      => 'post',
 			'paged'          => 1,
 			'posts_per_page' => 3,
 			'orderby'        => 'ID',
