@@ -4,7 +4,7 @@
  *
  * A class definition that holds all the hooks regarding all the custom functionalities.
  *
- * @link       https://github.com/vermadarsh/
+ * @link      https://github.com/priyankasoni97/
  * @since      1.0.0
  *
  * @package    Core_Functions_Admin
@@ -18,7 +18,7 @@
  *
  * @since      1.0.0
  * @package    Core_Functions
- * @author     Adarsh Verma <adarsh@cmsminds.com>
+ * @author     Priyanka Soni <priyanka.soni@cmsminds.com>
  */
 class Cf_Core_Functions_Admin {
 	/**

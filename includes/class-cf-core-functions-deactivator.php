@@ -4,7 +4,7 @@
  *
  * A class definition that holds the code that would execute on plugin deactivation.
  *
- * @link       https://github.com/vermadarsh/
+ * @link       https://github.com/priyankasoni97/
  * @since      1.0.0
  *
  * @package    Core_Functions
@@ -18,12 +18,12 @@
  *
  * @since      1.0.0
  * @package    Core_Functions
- * @author     Adarsh Verma <adarsh.srmcem@gmail.com>
+ * @author     Priyanka Soni <priyanka.soni@cmsminds.com>
  */
 class Cf_Core_Functions_Deactivator {
 	/**
 	 * Enqueue scripts for admin end.
 	 */
 	public static function run() {
-    }
+	}
 }

@@ -3,7 +3,7 @@
  * This file is used for writing all the re-usable custom functions.
  *
  * @since   1.0.0
- * @package Sync_Grants
+ * @package Core_Functions
  */
 
 // Exit if accessed directly.

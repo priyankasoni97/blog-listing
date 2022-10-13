@@ -2,17 +2,17 @@
 /**
  * The plugin bootstrap file.
  *
- * @link              https://github.com/vermadarsh/
+ * @link              https://github.com/priyankasoni97/
  * @since             1.0.0
  * @package           Core_Functions
  *
  * @wordpress-plugin
  * Plugin Name:       Core Functions
- * Plugin URI:        https://github.com/vermadarsh/
+ * Plugin URI:        https://github.com/priyankasoni97/
  * Description:       This plugin is responsible for all the custom functionalities.
  * Version:           1.0.0
- * Author:            Adarsh Verma
- * Author URI:        https://github.com/vermadarsh/
+ * Author:            Priyanka Soni
+ * Author URI:        https://github.com/priyankasoni97/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       core-functions
