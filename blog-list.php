@@ -1,13 +1,13 @@
 <?php
 /**
- * The plugin bootstrap file.
+ * The plugin main file
  *
  * @link              https://github.com/priyankasoni97/
  * @since             1.0.0
- * @package           Core_Functions
+ * @package           Blog_List
  *
  * @wordpress-plugin
- * Plugin Name:       Core Functions
+ * Plugin Name:       Blog List
  * Plugin URI:        https://github.com/priyankasoni97/
  * Description:       This plugin is responsible for all the custom functionalities.
  * Version:           1.0.0
@@ -15,7 +15,7 @@
  * Author URI:        https://github.com/priyankasoni97/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       core-functions
+ * Text Domain:       blog-list
  */
 
 // If this file is called directly, abort.
