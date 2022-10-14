@@ -98,6 +98,7 @@ class Cf_Core_Functions_Public {
 	 * @param    array $templates This variable holds the all the templates array.
 	 */
 	public function cf_template_include_callback( $templates ) {
+		// Return template path if blog page is found.
 		if ( is_page( 'blog' ) ) {
 			$file_name = 'blog.php';
 			$templates = CF_PLUGIN_PATH . 'templates/' . $file_name;

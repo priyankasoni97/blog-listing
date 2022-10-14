@@ -6,6 +6,8 @@
  */
 
 get_header();
+
+// Get the post cetegories.
 $categories = get_terms(
 	array(
 		'taxonomy'   => 'category',
