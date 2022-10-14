@@ -2,7 +2,7 @@
 /**
  * Blog page Template.
  *
- * @package Core_Functions
+ * @package Blog_List
  */
 
 get_header();

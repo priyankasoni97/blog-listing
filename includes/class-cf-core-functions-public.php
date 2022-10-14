@@ -7,8 +7,8 @@
  * @link       https://github.com/priyankasoni97/
  * @since      1.0.0
  *
- * @package    Core_Functions_Public
- * @subpackage Core_Functions_Public/includes
+ * @package    Blog_List_Public
+ * @subpackage Blog_List_Public/includes
  */
 
 /**
@@ -17,7 +17,7 @@
  * A class definition that holds all the hooks regarding all the custom functionalities.
  *
  * @since      1.0.0
- * @package    Core_Functions
+ * @package    Blog_List
  * @author     Priyanka Soni <priyanka.soni@cmsminds.com>
  */
 class Cf_Core_Functions_Public {

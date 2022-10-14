@@ -7,8 +7,8 @@
  * @link       https://github.com/priyankasoni97/
  * @since      1.0.0
  *
- * @package    Core_Functions
- * @subpackage Core_Functions/includes
+ * @package    Blog_List
+ * @subpackage Blog_List/includes
  */
 
 /**
@@ -17,7 +17,7 @@
  * A class definition that holds the code that would execute on plugin activation.
  *
  * @since      1.0.0
- * @package    Core_Functions
+ * @package    Blog_List
  * @author     Priyanka Soni <priyanka.soni@cmsminds.com>
  */
 class Cf_Core_Functions_Activator {
