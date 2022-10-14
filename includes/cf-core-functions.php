@@ -58,7 +58,7 @@ if ( ! function_exists( 'cf_list_posts_html' ) ) {
 	 * @since 1.0.0
 	 */
 	function cf_list_posts_html( $wp_posts ) {
-		// Prepare Html.
+		// Preparing Html.
 		ob_start();
 		foreach ( $wp_posts as $wp_post_id ) {
 			$featured_image = get_the_post_thumbnail_url( $wp_post_id );
