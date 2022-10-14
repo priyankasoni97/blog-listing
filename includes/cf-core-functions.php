@@ -64,7 +64,8 @@ if ( ! function_exists( 'cf_list_posts_html' ) ) {
 			$featured_image = get_the_post_thumbnail_url( $wp_post_id );
 			$post_obj       = get_post( $wp_post_id );
 			$post_tags      = get_the_terms( $wp_post_id, 'post_tag' );
-			$new_tag        = ( in_array( 'new', $post_tags, true ) ) ? 'New' : '';
+			$tag            = 'New';
+			$new_tag        = ( in_array( 'new', $post_tags, true ) ) ? $tag : '';
 			$post_title     = get_the_title( $wp_post_id );
 			$product_terms  = get_the_terms( $wp_post_id, 'category' );
 			$post_content   = wp_filter_nohtml_kses( get_the_excerpt( $wp_post_id ) ); // Strips all HTML from a post content .
