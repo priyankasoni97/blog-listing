@@ -58,6 +58,7 @@ if ( ! function_exists( 'cf_list_posts_html' ) ) {
 	 * @since 1.0.0
 	 */
 	function cf_list_posts_html( $wp_posts ) {
+		// Prepare Html.
 		ob_start();
 		foreach ( $wp_posts as $wp_post_id ) {
 			$featured_image = get_the_post_thumbnail_url( $wp_post_id );
@@ -66,7 +67,7 @@ if ( ! function_exists( 'cf_list_posts_html' ) ) {
 			$new_tag        = ( in_array( 'new', $post_tags, true ) ) ? 'New' : '';
 			$post_title     = get_the_title( $wp_post_id );
 			$product_terms  = get_the_terms( $wp_post_id, 'category' );
-			$post_content   = wp_filter_nohtml_kses( get_the_excerpt( $wp_post_id ) );
+			$post_content   = wp_filter_nohtml_kses( get_the_excerpt( $wp_post_id ) ); // Strips all HTML from a post content .
 			$post_link      = get_permalink( $wp_post_id );
 			?>
 			<div class="col-md-4">
@@ -78,6 +79,7 @@ if ( ! function_exists( 'cf_list_posts_html' ) ) {
 			</div>
 			<?php
 		}
+
 		return ob_get_clean();
 	}
 }

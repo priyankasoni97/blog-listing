@@ -22,7 +22,7 @@
  */
 class Cf_Core_Functions_Activator {
 	/**
-	 * Enqueue scripts for admin end.
+	 * Function which runs on plugin activation.
 	 */
 	public static function run() {
 		$blog_page = get_page_by_path( 'blog', ARRAY_A );

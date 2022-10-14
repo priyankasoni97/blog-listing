@@ -92,7 +92,7 @@ class Cf_Core_Functions_Public {
 	}
 
 	/**
-	 * Template Redirect hook for archive pages and others.
+	 * Template redirect hook for archive pages and others.
 	 *
 	 * @since 1.0.0
 	 * @param    array $templates This variable holds the all the templates array.
@@ -102,6 +102,7 @@ class Cf_Core_Functions_Public {
 			$file_name = 'blog.php';
 			$templates = CF_PLUGIN_PATH . 'templates/' . $file_name;
 		}
+
 		return $templates;
 	}
 
@@ -114,15 +115,23 @@ class Cf_Core_Functions_Public {
 		$all_posts   = $posts_query->posts;
 		$count       = $posts_query->found_posts;
 		$loaded      = (int) ceil( $count / $posts_query->query['posts_per_page'] );
+
+		// If loaded post found greated then one.
 		if ( $loaded > 1 ) {
 			$loadmore = 2;
 		}
+
+		// If paged argument value is set and not empty.
 		if ( isset( $paged ) && ! empty( $paged ) ) {
 			$loadmore = $paged + 1;
 		}
+
+		// If paged value and loaded rounded value of loaded posts are match.
 		if ( $loaded === $paged ) {
 			$loadmore = 0;
 		}
+
+		// Return success, if posts found in post query.
 		if ( ! empty( $all_posts ) && is_array( $all_posts ) ) {
 			$code    = 'success';
 			$html    = cf_list_posts_html( $all_posts );
@@ -133,6 +142,8 @@ class Cf_Core_Functions_Public {
 			$html    = '';
 			$message = 'Oops! No Posts Found..!';
 		}
+
+		// Send back the AJAX response.
 		wp_send_json_success(
 			array(
 				'code'    => $code,
@@ -160,15 +171,22 @@ class Cf_Core_Functions_Public {
 			'orderby'        => 'ID',
 			'order'          => 'ASC',
 		);
+
+		// Return ,page agrument if paged found in global post variable.
 		if ( isset( $paged ) && $paged > 0 ) {
 			$args['paged'] = $paged;
 		}
+
+		// Return ,category id agrument if category found in global post variable.
 		if ( isset( $category_id ) && ! empty( $category_id ) ) {
 			$args['category__in'] = $category_id;
 		}
+
+		// Return ,search id agrument if category found in global post variable.
 		if ( isset( $searchtext ) && ! empty( $searchtext ) ) {
 			$args['s'] = $searchtext;
 		}
+
 		return $args;
 	}
 }

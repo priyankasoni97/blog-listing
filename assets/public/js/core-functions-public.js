@@ -46,23 +46,23 @@ jQuery( document ).ready( function( $ ) {
 	} );
 
 	// jQuery to serve ajax for remove applied filters.
-	$(document).on('click','.close_search_filter',function(){
-		var remove_filter = jQuery(this).data('remove_filter');
-		var params   = cf_get_query_variable();
-		const url = new URL(window.location);
-		url.searchParams.delete(remove_filter);
-		window.history.pushState({},'',url);
-		if ('category' === remove_filter) {
-			$('.cf_category[data-term_slug="'+params.category+'"]').removeClass('active');
+	$( document ).on( 'click', '.close_search_filter', function() {
+		var remove_filter = $( this ).data( 'remove_filter' );
+		var params        = cf_get_query_variable();
+		const url         = new URL( window.location );
+		url.searchParams.delete( remove_filter );
+		window.history.pushState( {}, '', url);
+		if ( 'category' === remove_filter ) {
+			$( '.cf_category[data-term_slug="' + params.category + '"]' ).removeClass( 'active' );
 		}
-		if($.inArray("category", params) == -1 || $.inArray("text", params) == -1){
-			url.searchParams.delete('action');
-			window.history.pushState({},'',url);
-			jQuery('.bl_filters_applied').hide();
+		if ( $.inArray( "category", params ) == -1 || $.inArray( "text", params ) == -1 ) {
+			url.searchParams.delete( 'action' );
+			window.history.pushState( {}, '', url );
+			jQuery( '.bl_filters_applied' ).hide();
 		}
-		$('.bl_filter_'+remove_filter).hide();
+		$( '.bl_filter_' + remove_filter ).hide();
 		get_filtered_posts();
-	});
+	} );
 
 	/**
 	 * Check if a number is valid.
@@ -131,27 +131,27 @@ jQuery( document ).ready( function( $ ) {
 	 * @param {number} category 
 	 * @param {string} search_text 
 	 */
-	function get_filtered_posts(paged = null, category = null, search_text = null ){
+	function get_filtered_posts( paged = null, category = null, search_text = null ) {
 		var params   = cf_get_query_variable();
-		if( $.inArray('category',params) !== -1 ){
-			category = $('.cf_category[data-term_slug="'+params.category+'"]').attr('data-term_id');
-			$('.cf_category[data-term_slug="'+params.category+'"]').addClass('active');
-			jQuery('.bl_filter_category .innerfiltertag span').text(params.category);
-			jQuery('.bl_filters_applied').show();
-			jQuery('.bl_filter_category').show();
+		if( $.inArray( 'category', params ) !== -1 ) {
+			category = $( '.cf_category[data-term_slug="' + params.category + '"]' ).attr( 'data-term_id' );
+			$( '.cf_category[data-term_slug="' + params.category + '"]' ).addClass( 'active' );
+			$( '.bl_filter_category .innerfiltertag span' ).text( params.category );
+			$( '.bl_filters_applied' ).show();
+			$( '.bl_filter_category' ).show();
 		}
-		if( $.inArray('text',params) !== -1 ){
+		if( $.inArray( 'text', params ) !== -1 ) {
 			search_text = params.text;
-			$('.bl_search_text').val(search_text);
-			jQuery('.bl_filter_text .innerfiltertag span').text(params.text);
-			jQuery('.bl_filters_applied').show();
-			jQuery('.bl_filter_text').show();
+			$( '.bl_search_text' ).val( search_text );
+			$( '.bl_filter_text .innerfiltertag span' ).text( params.text );
+			$( '.bl_filters_applied' ).show();
+			$( '.bl_filter_text' ).show();
 		}
 		var post_data = {
-			paged      : paged,
-			category   : category,
-			searchtext : search_text,
-			action     : 'fetch_posts',
+			paged: paged,
+			category: category,
+			searchtext: search_text,
+			action: 'fetch_posts',
 		};
 		$.ajax({
 			dataType: 'json',
@@ -161,28 +161,28 @@ jQuery( document ).ready( function( $ ) {
 			beforeSend: function() {
 				$('.bs_loader').show();
 			},
-			success: function( response ){
+			success: function( response ) {
 				if ( 'success' === response.data.code ) {
-					if(paged !== null){
-						$('.blog_items').append( response.data.html );
-					}else{
+					if ( paged !== null ) {
+						$( '.blog_items' ).append(  response.data.html );
+					} else {
 						$('.blog_items').html( response.data.html );
 					}
-					if( 0 < response.data.paged ) {
-						$('.cf_load_more').attr('data-paged',response.data.paged);
-						$('.load_more_main').show();
-					}else{
-						$('.load_more_main').hide();
+					if ( 0 < response.data.paged ) {
+						$( '.cf_load_more' ).attr( 'data-paged', response.data.paged );
+						$( '.load_more_main' ).show();
+					} else {
+						$( '.load_more_main' ).hide();
 					}
 				} else {
-					$('.blog_items').html( response.data.message );
-					$('.load_more_main').hide();
+					$( '.blog_items' ).html( response.data.message );
+					$( '.load_more_main' ).hide();
 				}
 			},
 			complete: function() {
-				$('.bs_loader').hide();
+				$( '.bs_loader' ).hide();
 			}
-		});
+		} );
 	}
 
 	/**

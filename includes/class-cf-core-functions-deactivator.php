@@ -22,7 +22,7 @@
  */
 class Cf_Core_Functions_Deactivator {
 	/**
-	 * Enqueue scripts for admin end.
+	 * Function which runs on plugin deactivation.
 	 */
 	public static function run() {
 	}
